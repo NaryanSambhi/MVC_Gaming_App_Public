@@ -1,0 +1,75 @@
+﻿@model Z_Team_Group_Project.Services.BlackJackGame
+
+
+@{
+    ViewData["Title"] = "BlackJack";
+}
+
+<h2>Dealer's Hand</h2>
+<div>
+    @foreach (var card in Model.DealerHand)
+    {
+        <img src="@card.ImagePath" alt="@card.Rank of @card.Suit" style="width: 100px; margin: 5px;" />
+    }
+</div>
+<p>Total: @Model.DealerHand.Sum(c => c.Score)</p>
+
+<h2>Your Hand</h2>
+<div>
+    @foreach (var card in Model.PlayerHand)
+    {
+        <img src="@card.ImagePath" alt="@card.Rank of @card.Suit" style="width: 100px; margin: 5px;" />
+    }
+</div>
+<p>Total: @Model.PlayerHand.Sum(c => c.Score)</p>
+
+@if (Model.GameOver)
+{
+    <h3>Game Over</h3>
+    if (Model.PlayerHand.Sum(c => c.Score) == 21)
+    {
+        <p>Player got Blackjack!</p>
+    }
+    else if (Model.DealerHand.Sum(c => c.Score) == 21)
+    {
+        <p>Dealer got Blackjack!.</p>
+
+    }
+
+    if (Model.PlayerHand.Sum(c => c.Score) > 21)
+    {
+        <p>You busted! Dealer Wins.</p>
+    }
+    else if (Model.DealerHand.Sum(c => c.Score) > 21)
+    {
+        <p>Dealer busted! You Win.</p>
+
+    }
+    else if (Model.PlayerHand.Sum(c => c.Score) > Model.DealerHand.Sum(c => c.Score))
+    {
+        <p>You win!</p>
+    }
+    else if (Model.PlayerHand.Sum(c => c.Score) < Model.DealerHand.Sum(c => c.Score))
+    {
+        <p>Dealer wins!</p>
+    }
+    else
+    {
+        <p>Its a push!</p>
+    }
+
+    <a asp-action="Reset" class="btn btn-primary">Reset</a>
+
+}
+else
+{
+    <div>
+        <a asp-action="Hit" class="btn btn-primary">Hit</a> |
+        <a asp-action="Stand" class="btn btn-secondary">Stand</a> |
+    </div>
+}
+
+
+
+
+

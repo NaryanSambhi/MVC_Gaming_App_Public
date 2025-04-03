@@ -1,0 +1,92 @@
+﻿@model AuthenticationViewModel
+
+@{
+    ViewData["Title"] = "Sign In";
+}
+
+<body>
+    <!-- Center the content horizontally -->
+    <div class="container d-flex justify-content-center pt-5 pb-5">
+            <!-- Card for the form (Login form on the left) -->
+            <div class="card" style="max-width: 24rem; width: 100%; margin-right: 20px;">
+                <div class="card-body">
+                    <div class="text-center">
+                        <!-- Form that posts to Sign_in action -->
+                        <form asp-controller="Authentication" asp-action="Index" method="post" class="form-signin">
+                            <img class="mb-4" src="~/Assets/ace.png" alt="ace-logo" width="72" height="72">
+                            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+                            <!-- Email input -->
+                            <div class="mb-3">
+                                <label asp-for="Username" class="control-label"></label>
+                                <input asp-for="Username" class="form-control" placeholder="Email address" required autofocus />
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                            </div>
+
+                            <!-- Password input -->
+                            <div class="mb-3">
+                                <label asp-for="Password" class="control-label"></label>
+                                <input asp-for="Password" type="text" class="form-control" placeholder="Password" required />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                        </form>
+
+                            <!-- Result of Attempt -->
+                            <div>
+                                <p>@Model.Result</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="max-width: 18rem; width: 100%; height: 50%;"> 
+                <!-- Card for the "Create/Manage Account" -->
+                <div class="card" style="max-width: 18rem; width: 100%; height: 50%;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Account Options</h5>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-success" type="button">Create Account</button>
+                            <button class="btn btn-info" type="button">Manage Account</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            <!-- Current Login -->
+
+            <div class="container d-flex justify-content-center pb-5">
+                <div class="card" style="max-width: 24rem; width: 100%;">
+                    <div class="card-body">
+                        <div class="text-center">
+                            @if (!string.IsNullOrEmpty(Model.Username)) 
+                            {
+                                <h5 class="card-title text-center">@Model.Username</h5>
+                                <p class="card-text">Current Log-in</p>
+                            }
+                            else
+                            {
+                                <p class="card-text">No user logged in.</p>
+                            }
+
+                            <!-- Logout button -->
+                            @if (!string.IsNullOrEmpty(Model.Username))
+                            {
+                                <form asp-controller="Authentication" asp-action="Logout" method="post">
+                                    <button type="submit" class="btn btn-danger">Logout</button>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>

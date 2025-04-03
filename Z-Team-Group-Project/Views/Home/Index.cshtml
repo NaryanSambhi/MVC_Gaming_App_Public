@@ -1,0 +1,180 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content text-center">
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">Z Team Gambling</h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Mastering Strategy, Luck, and Risk Together</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+
+                <a class="btn btn-primary" asp-area="" asp-controller="Authentication">Get Started</a>
+
+
+                <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="GamesHome">Play Now</a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about" class="about section pt-5">
+
+        <div class="container">
+
+            <div class="row gy-4">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Welcome to our online casino, where strategy, luck and skill all come together to risk massive wins.</h3>
+                    </p>
+                    <p>Here within our group project you may play between many exciting work in progress games, where users can withdrawl and desposite money into user accounts, make bets and manage, all with restfull API requests.</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+                    <div class="content ps-0 ps-lg-5">
+                        <p class="fst-italic">
+                            Our high stake games include the following:
+                        </p>
+                        <ul>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Blackjack the strategic card game of risk and skill.</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Horse racing, an exciting race of speed, skill and betting.</span></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <span>Roulettem where you may spin the wheel and leave everything up to chance, with high stakes and high rewards.</span></li>
+                        </ul>
+                        <p>
+                            We hope you enjoy your time at Z team casino
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Game Selection Section -->
+    <section id="game-selection" class="game-selection pt-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Games</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Game Card 1 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="~/Assets/BlackJack.jpg" class="card-img-top" alt="Blackjack">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">BlackJack</h5>
+                            <p class="card-text">Strategic card game of risk and skill.</p>
+                            <a class="btn btn-primary w-100" asp-area="" asp-controller="Game" asp-action="Blackjack">Play Game</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Game Card 2 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="~/Assets/HorseRace.jpg" class="card-img-top" alt="HorseRacing">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Racing</h5>
+                            <p class="card-text">Exciting race of speed, skill, betting.</p>
+                            <a href="#" class="btn btn-primary w-100">Play Game</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Game Card 3 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="~/Assets/RL.jpg" class="card-img-top" alt="Roulette">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Roulette</h5>
+                            <p class="card-text">Spinning wheel, chance, luck, high stakes.</p>
+                            <a href="#" class="btn btn-primary w-100">Play Game</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+<style>
+    /* Hero Section */
+    .hero-section {
+        position: relative;
+        width: 100vw; /* Make sure it spans the entire width of the viewport */
+        height: 70vh; /* Full viewport height */
+        background-image: url('/Assets/Background.jpg'); /* Your background image */
+        background-size: cover; /* Ensure the image covers the entire section */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+    }
+
+    /* Hero Content */
+    .hero-content {
+        z-index: 1;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding shadow for better readability */
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+        .hero-buttons .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        /* Primary button */
+        .hero-buttons .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+
+        /* Secondary button */
+        .hero-buttons .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+        }
+
+        /* Hover effects */
+        .hero-buttons .btn:hover {
+            opacity: 0.8;
+        }
+
+
+    .card-img-top {
+        width: 100%;
+        height: 250px; /* Set a fixed height */
+        object-fit: cover; /* This will ensure the image fills the space while maintaining its aspect ratio */
+    }
+
+</style>
