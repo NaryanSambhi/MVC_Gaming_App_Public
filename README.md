@@ -49,3 +49,51 @@ Before you run this project, make sure you have the following installed:
 
 ## Getting Started
 
+- **Specific setup steps coming soon
+- **Clone and configure database for your machine using nuget package manager to update database
+
+---
+
+## Structure
+
+Here’s an overview of the project structure:
+
+- **Controllers**
+    - `HomeController.cs`: Manages the home page and navigation.
+    - `GameController.cs`: Handles all routes related to game listings and interactions.
+    - `AccountController.cs`: Manages user registration and authentication.
+  
+- **Models**
+    - `User.cs`: Represents a user in the database.
+    - `Game.cs`: Represents a game and its associated data.
+
+- **Views**
+    - `Home/Index.cshtml`: The homepage layout and navigation.
+    - `Game/Index.cshtml`: The game listing and game details page.
+    - `Account/Login.cshtml`: The sign-in page.
+
+---
+
+## Technologies Used
+
+- **ASP.NET Core MVC** for web app structure.
+- **SQL Server** for database management.
+- **Entity Framework Core** for ORM-based data handling.
+- **HTML5**, **CSS3**, and **JavaScript** for the frontend.
+
+---
+
+## Contributing
+
+Contributions are welcome! If you have suggestions or find bugs, please feel free to submit an issue or a pull request. Here are some ways you can contribute:
+
+- Reporting bugs or issues.
+- Suggesting new features.
+- Improving documentation.
+
+---
+
+That's it! Enjoy our gaming app! 🎮
+
+
+
