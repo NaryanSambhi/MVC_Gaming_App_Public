@@ -35,6 +35,12 @@ Each game has a dedicated page for gameplay. After signing in, you can start the
 
 Sign in with your credentials to access the full functionality of the app. Your data is securely stored in the backend SQL database.
 
+
+### Responsive UI
+![image](https://github.com/user-attachments/assets/60289c18-c681-406a-bb7e-69f496e508c8)
+
+UI written to be responsive on any device
+
 ---
 
 ## Prerequisites
